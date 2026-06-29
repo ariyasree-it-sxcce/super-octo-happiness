@@ -3,10 +3,12 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
  
 # --- Change these to your MySQL details ---
+DB_USER     = "root"
+DB_PASSWORD = "eAciMlBJoxLyEngWbrRlGvtszdIqFmlM"
+DB_HOST     = "mysql.railway.internal"
+DB_NAME     = "railway"
 
-DATABASE_URL = "mysql+pymysql://root:ariya123@localhost:3306/eit_login"
- 
-engine       = create_engine(DATABASE_URL)
+DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
 SessionLocal = sessionmaker(bind=engine)
 Base         = declarative_base()
  
